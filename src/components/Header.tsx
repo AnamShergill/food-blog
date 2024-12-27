@@ -15,10 +15,10 @@ export default function Header() {
         <div className="flex items-center space-x-1">
           {/* Add Logo Image */}
           <Image
-            src="/images/logo.png" 
+            src="/images/logo.png"
             alt="Foodie's Delight Logo"
-            width={80} 
-            height={80} 
+            width={80}
+            height={80}
             className="object-contain"
           />
           <Link href={"/"}>
@@ -36,7 +36,7 @@ export default function Header() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-wrap justify-between md:items-center text-white font-semibold text-xl px-10 md:px-20 space-x-6">
+        <div className={`flex flex-wrap justify-between md:items-center text-white font-semibold text-xl px-10 md:px-20 space-x-6 ${isMenuOpen ? 'block' : 'hidden sm:flex'}`}>
           <Link href="#/" className="text-white">
             Home
           </Link>
@@ -48,49 +48,10 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Burger Menu Icon */}
-        <div className="sm:hidden flex items-center">
-          <button
-            className="text-white focus:outline-none"
-            onClick={() => setMenuOpen(!isMenuOpen)}
-          >
-            {/* Burger Icon */}
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
       </div>
 
-      {/* Collapsible Menu for Small Screens */}
-      {isMenuOpen && (
-        <div className="sm:hidden bg-fuchsia-700 text-white flex flex-col items-center space-y-3 py-3">
-          <Link href="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-          <Link href="#about" onClick={() => setMenuOpen(false)}>
-            About
-          </Link>
-          <Link href="/" scroll={false} onClick={(e) => { 
-            e.preventDefault(); 
-            scrollToRecipes(); 
-            setMenuOpen(false); 
-          }}>
-            Recipes
-          </Link>
-        </div>
-      )}
+      
+      
     </header>
   );
 
