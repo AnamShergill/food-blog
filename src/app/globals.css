@@ -1,27 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+  /* Keyframe animation for fade-up effect */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Apply the fade-up animation */
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Keyframe for fading in each letter */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
+
+/* Keyframe for fading in and out each word */
+@keyframes wordFadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Apply the fade-in and fade-out animation to each word */
+.animate-word-repeat {
+  display: inline-block;
+  opacity: 0;
+  animation: wordFadeInOut 2s ease-in-out infinite;
+}
+
+/* Optional: Add a delay between words */
+.animate-word-repeat:nth-child(1) {
+  animation-delay: 0s;
+}
+.animate-word-repeat:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.animate-word-repeat:nth-child(3) {
+  animation-delay: 1.8s;
+}
+.animate-word-repeat:nth-child(4) {
+  animation-delay: 2s;
+}
+
+
+
+
