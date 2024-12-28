@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen] = useState(false);
 
   return (
     <header className="bg-fuchsia-950">
