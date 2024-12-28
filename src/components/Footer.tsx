@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Footer = () => {
   // Specify that the state will hold a number, not null
-  const [currentYear, setCurrentYear] = useState<number>(new Date().getFullYear());
+  const [currentYear] = useState<number>(new Date().getFullYear());
 
   return (
     <div
