@@ -71,7 +71,7 @@ export default function RicePage() {
     {
       id: "afghani-pulao",
       title: "Afghani Pulao",
-      image: "/images/kabuli.jpg",
+      image: "/images/Kabuli.jpg",
       description: "Afghani Pulao is a fragrant and flavorful rice dish infused with spices, raisins, and tender lamb or chicken. The sweet and savory combination makes this dish a perfect centerpiece for any special occasion.",
       backgroundColor : "#4C9B9B",
       ingredients: [

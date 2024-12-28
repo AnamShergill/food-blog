@@ -126,7 +126,7 @@ export default function DessertsPage() {
     {
       id: "tiramisu",
       title: "Tiramisu",
-      image: "/images/Tiramisu.jpg",
+      image: "/images/tiramisu.jpg",
       description:
         "A delightful marriage of espresso-soaked ladyfingers and creamy mascarpone filling, this Italian classic is simply irresistible. The delicate layers of rich coffee flavor and smooth cream create an indulgent treat that will transport your taste buds straight to Italy.",
       backgroundColor: "#F5D0C5", 

@@ -5,21 +5,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  const [isMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle the menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="bg-fuchsia-950">
       <div className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center px-4 py-3">
-        
+
         {/* Foodie's Delight Logo with Image and New Font Style */}
         <div className="flex items-center space-x-1">
-          {/* Add Logo Image */}
+          {/* Adding Logo Image */}
           <Image
             src="/images/logo.png"
             alt="Foodie's Delight Logo"
             width={80}
             height={80}
             className="object-contain"
+            
           />
           <Link href={"/"}>
             <span
@@ -35,8 +41,15 @@ export default function Header() {
           </Link>
         </div>
 
+        {/* Burger Icon for Mobile */}
+        <div className="sm:hidden flex flex-col items-center space-y-1" onClick={toggleMenu}>
+          <div className={`w-6 h-1 bg-white ${isMenuOpen ? 'rotate-45 translate-y-1' : ''} transition-all duration-300`}></div>
+          <div className={`w-6 h-1 bg-white ${isMenuOpen ? 'opacity-0' : ''} transition-all duration-300`}></div>
+          <div className={`w-6 h-1 bg-white ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''} transition-all duration-300`}></div>
+        </div>
+
         {/* Navigation Links */}
-        <div className={`flex flex-wrap justify-between md:items-center text-white font-semibold text-xl px-10 md:px-20 space-x-6 ${isMenuOpen ? 'block' : 'hidden sm:flex'}`}>
+        <div className={`flex flex-col sm:flex-row sm:space-x-6 text-white font-semibold text-xl px-10 md:px-20 space-y-4 sm:space-y-0 sm:flex ${isMenuOpen ? 'block' : 'hidden sm:flex'}`}>
           <Link href="#/" className="text-white">
             Home
           </Link>
@@ -49,9 +62,6 @@ export default function Header() {
         </div>
 
       </div>
-
-      
-      
     </header>
   );
 
